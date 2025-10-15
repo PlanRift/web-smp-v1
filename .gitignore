@@ -1,0 +1,24 @@
+# Dependencies
+/node_modules
+
+# Build output folder
+/dist
+
+# Log files
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# Environment variables
+# Never commit .env files!
+.env
+.env.local
+.env.*.local
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
