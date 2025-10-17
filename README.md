@@ -17,9 +17,10 @@ We use the standard "Fork & Pull Request" model. Here's what that looks like:
 1. **Fork** the project repository.  
 2. **Clone** or **Download** your fork to your local machine.  
 3. Create a new **branch** for your changes.  
-4. Make your code changes.  
-5. **Commit** and **push** your changes to your fork.  
-6. Open a **Pull Request** to the main project.
+4. Set up the local development environment.  
+5. Make your code changes.  
+6. **Commit** and **push** your changes to your fork.  
+7. Open a **Pull Request** to the main project.
 
 Let's go through each step in detail.
 
@@ -42,8 +43,7 @@ Cloning creates a connection to your fork on GitHub, which is necessary for push
 2. Click the green **\< \> Code** button.  
 3. Copy the URL (it should look something like https://github.com/YOUR\_USERNAME/the-project-name.git).  
 4. Open your terminal (or command prompt) and run this command:  
-   git clone \[https://github.com/YOUR\_USERNAME/the-project-name.git\](https://github.com/YOUR\_USERNAME/the-project-name.git)
-
+   git clone https://github.com/YOUR\_USERNAME/the-project-name.git  
    *Be sure to replace YOUR\_USERNAME and the-project-name with the correct names\!*  
 5. Now, navigate into the new project folder:  
    cd the-project-name
@@ -61,24 +61,36 @@ If you prefer not to use the command line for this step, you can download the co
 ### **Step 3: Create a New Branch**
 
 It's a best practice to create a new "branch" for every new feature or bug fix. This keeps your changes organized. Give your branch a descriptive name, like fix/login-button-bug.  
-**Using the Terminal:**  
-git checkout \-b your-branch-name
-
+Using the Terminal:  
+git checkout \-b your-branch-name  
 *(Example: git checkout \-b feature/add-dark-mode)*  
 **VS Code Tip:** In VS Code's bottom-left corner, click the current branch name (it's probably main or master). A menu will open at the top. Select \+ Create new branch..., type your new branch name, and press Enter.
 
-### **Step 4: Make Your Changes**
+### **Step 4: Set Up the Development Environment**
+
+Before you start making changes, you need to install the project's dependencies and start the local development server.
+
+1. **Install Dependencies:** Open your terminal in the project's root directory and run:  
+   npm install
+
+2. **Start the Dev Server:** To see your changes live in the browser, run:  
+   npm run dev
+
+   This command will do two things at once:  
+   * It will watch for any changes you make to the CSS files in the src folder and automatically rebuild them.  
+   * It will start a live server, opening your index.html file in the browser and automatically refreshing it when you make changes.
+
+### **Step 5: Make Your Changes**
 
 This is the fun part\! Open the project in your favorite code editor and make the edits you want to contribute.
 
-### **Step 5: Commit Your Changes**
+### **Step 6: Commit Your Changes**
 
 A "commit" is like a saved snapshot of your work.  
 **Using the Terminal:**
 
 1. Stage all your changed files:  
-   git add .
-
+   git add .  
 2. Commit the changes with a descriptive message:  
    git commit \-m "feat: Add a dark mode toggle button"
 
@@ -88,15 +100,14 @@ A "commit" is like a saved snapshot of your work.
 2. Type your commit message in the box at the top.  
 3. Click the **Commit** button.
 
-### **Step 6: Push Your Changes to Your Fork**
+### **Step 7: Push Your Changes to Your Fork**
 
 Your commit is currently only on your local machine. You need to "push" it up to your fork on GitHub.  
-**Using the Terminal:**  
-git push origin your-branch-name
-
+Using the Terminal:  
+git push origin your-branch-name  
 **VS Code Tip:** After you commit, click the **"Publish Branch"** button that appears in the Source Control panel or in the bottom-left status bar. This will push your committed changes.
 
-### **Step 7: Open a Pull Request (PR)**
+### **Step 8: Open a Pull Request (PR)**
 
 This is the final step\! A "Pull Request" (PR) is how you propose your changes to the original project.
 
